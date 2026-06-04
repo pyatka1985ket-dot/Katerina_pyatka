@@ -37,9 +37,9 @@ jobs:
         run: |
           TARGET="${{ github.event.inputs.deployment_target }}"
           if [ "$TARGET" = "all" ]; then
-            pytest -v
+            pytest -v tests/
           elif [ "$TARGET" = "smoke" ]; then
-            pytest -v -m smoke
+            pytest -v -m smoke tests/
           elif [ "$TARGET" = "regression" ]; then
-            pytest -v -m regression
+            pytest -v -m regression tests/
           fi
